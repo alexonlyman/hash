@@ -1,7 +1,7 @@
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Random;
-import java.util.Set;
+import transport.Car;
+import transport.Mechanic;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -40,6 +40,23 @@ public class Main {
             }
         }
         System.out.println(numbers);
+
+        Set<Car> carSet = new HashSet<>();
+
+        carSet.add(new Car("Х5", "BMW", 2013,"Германия"));
+        carSet.add(new Car("R1", "Volvo", 2012,"Германия"));
+        carSet.add(new Car("R1", "Volvo", 2012,"Германия"));
+        carSet.add(new Car("Max4", "Nissan", 2011,"Германия"));
+        System.out.println(Arrays.toString(carSet.toArray()));
+        Set<Mechanic> mechanics = new HashSet<>();
+        mechanics.add(new Mechanic("Валентин Павлович", "Электрик", "Volvo"));
+        mechanics.add(new Mechanic("Григорий Петрович", "Сборщик", "BMW"));
+
+        Map<String, String> map = new HashMap<>();
+        for (Mechanic mechanic : mechanics) {
+            map.put(mechanic.getName(), mechanic.getCar());
+        }
+        System.out.println(map);
 
     }
 }
