@@ -3,14 +3,15 @@ import java.util.Objects;
 public class Recipe {
     private String name;
     private ProductList productList;
-    private int totalCost;
+    private ProductList totalCost;
 
-    public Recipe(String name, ProductList productList, int totalCost) {
-        setName(name);
+    public Recipe(String name, ProductList productList, ProductList totalCost) {
+        this.name = name;
         setProductList(productList);
         setTotalCost(totalCost);
 
     }
+
 
     public String getName() {
         return name;
@@ -28,11 +29,11 @@ public class Recipe {
         this.productList = productList;
     }
 
-    public int getTotalCost() {
+    public ProductList getTotalCost() {
         return totalCost;
     }
 
-    public void setTotalCost(int totalCost) {
+    public void setTotalCost(ProductList totalCost) {
         this.totalCost = totalCost;
     }
 

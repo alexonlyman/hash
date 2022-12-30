@@ -1,15 +1,12 @@
 package transport;
 
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 public class Car {
     private String name;
     private String brand;
     private int year;
     private String country;
-    Set<Car> cars = new HashSet<>();
 
     public Car(String name, String brand, int year, String country) {
         this.name = name;

@@ -7,7 +7,6 @@ public class Mechanic {
     private String name;
     private String qualification;
     private String car;
-    Set<Mechanic> mechanics = new HashSet<>();
 
     public Mechanic(String name, String qualification, String car) {
         this.name = name;

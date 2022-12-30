@@ -1,3 +1,5 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Product {
@@ -5,12 +7,17 @@ public class Product {
     private Integer price;
     private Integer count;
 
+    Map<Product, Integer> productIntegerMap = new HashMap<>();
+
     public Product(String name, int price, int count){
         setName(name);
         setCount(count);
         setPrice(price);
+        productIntegerMap.getOrDefault(this, 1);
+        productIntegerMap.put(this, count);
 
     }
+
 
     public String getName(){
          return name;
@@ -25,7 +32,7 @@ public class Product {
 
     public int getPrice() {
         if (this.price == null || this.price == 0) {
-            System.out.println("Заполните карточку товара полностью");
+            throw new IllegalArgumentException("Заполните карточку товара полностью");
         }
         return price;
     }
