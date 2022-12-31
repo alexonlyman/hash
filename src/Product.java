@@ -7,14 +7,13 @@ public class Product {
     private Integer price;
     private Integer count;
 
-    Map<Product, Integer> productIntegerMap = new HashMap<>();
+
 
     public Product(String name, int price, int count){
         setName(name);
         setCount(count);
         setPrice(price);
-        productIntegerMap.getOrDefault(this, 1);
-        productIntegerMap.put(this, count);
+
 
     }
 

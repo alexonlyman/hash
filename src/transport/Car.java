@@ -7,13 +7,14 @@ public class Car {
     private String brand;
     private int year;
     private String country;
+    private String mechanicName;
 
-    public Car(String name, String brand, int year, String country) {
+    public Car(String name, String brand, int year, String country, String mechanic) {
         this.name = name;
         this.brand = brand;
         this.year = year;
         this.country = country;
-
+        this.mechanicName = mechanic;
     }
 
     public String getName() {
@@ -59,5 +60,14 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(getName());
+    }
+
+
+    public String getMechanicName() {
+        return mechanicName;
+    }
+
+    public void setMechanicName(String mechanicName) {
+        this.mechanicName = mechanicName;
     }
 }

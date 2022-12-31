@@ -4,10 +4,12 @@ import java.util.Set;
 public class ProductList {
     private Set<Product> products;
 
-    public static int totalCost(Product count, Product price) {
-        int totalcost;
-        totalcost = count.getCount() * price.getPrice();
-        return totalcost;
+    public  int totalCost() {
+        int sum = 0;
+        for (Product product : products) {
+            sum = product.getCount() * product.getPrice();
+        }
+        return sum;
     }
 
     public void add(Product product) {

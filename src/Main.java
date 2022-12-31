@@ -1,5 +1,4 @@
 import transport.Car;
-import transport.Mechanic;
 
 import java.util.*;
 
@@ -59,18 +58,16 @@ public class Main {
 //
         Set<Car> carSet = new HashSet<>();
 
-        carSet.add(new Car("Х5", "BMW", 2013, "Германия"));
-        carSet.add(new Car("R1", "Volvo", 2012, "Германия"));
-        carSet.add(new Car("R1", "Volvo", 2012, "Германия"));
-        carSet.add(new Car("Max4", "Nissan", 2011, "Германия"));
+        carSet.add(new Car("Х5", "BMW", 2013, "Германия", "Василий Петрович"));
+        carSet.add(new Car("R1", "Volvo", 2012, "Германия", "Василий Петрович"));
+        carSet.add(new Car("R1", "Volvo", 2012, "Германия", "Генадий Генадьев"));
+        carSet.add(new Car("Max4", "Nissan", 2011, "Германия","Василий Петрович"));
         System.out.println(Arrays.toString(carSet.toArray()));
-        Set<Mechanic> mechanics = new HashSet<>();
-        mechanics.add(new Mechanic("Валентин Павлович", "Электрик", "Volvo"));
-        mechanics.add(new Mechanic("Григорий Петрович", "Сборщик", "BMW"));
 
         Map<String, String> map = new HashMap<>();
-
-        map.put("Max4","Григорий Петрович");
+        for (Car car : carSet) {
+            map.put(car.getName(), car.getMechanicName());
+        }
 
         System.out.println(map);
     }
